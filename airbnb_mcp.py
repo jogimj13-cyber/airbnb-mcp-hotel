@@ -77,12 +77,9 @@ async def hotel_search(query):
         tools=tools,
         system_prompt=AIRBNB_PROMPT
     )
-    result = await agent.ainvoke(
-        {'messages': [HumanMessage(query)]}
-    )
-
-    response = result['messages'][-1].text
-    print(f"AI: {response}\n")
+    for chunk in agent.stream({'messages': [HumanMessage(query)]}):
+        print("AI:")
+        print(f"    {chunk['messages'][-1].text}")
 
 async def ask():
     print("\nChat mode started. Type 'q' or 'quit'")
@@ -97,4 +94,5 @@ async def ask():
 
 
 if __name__ == "__main__":
+
     asyncio.run(ask())
