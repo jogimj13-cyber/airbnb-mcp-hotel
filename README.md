@@ -7,3 +7,4 @@ A simple configuration using **MultiServerMCPClient**, **Airbnb**, and **GPT 4.1
 
 ## Cons:
   Not up to date
+  No User Interface
