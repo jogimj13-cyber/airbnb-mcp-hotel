@@ -77,7 +77,7 @@ async def hotel_search(query):
         tools=tools,
         system_prompt=AIRBNB_PROMPT
     )
-    for chunk in agent.stream({'messages': [HumanMessage(query)]}):
+    for chunk in agent.astream({'messages': [HumanMessage(query)]}):
         print("AI:")
         print(f"    {chunk['messages'][-1].text}")
 
@@ -96,3 +96,4 @@ async def ask():
 if __name__ == "__main__":
 
     asyncio.run(ask())
+
