@@ -7,5 +7,5 @@ A simple configuration using **MultiServerMCPClient**, **Airbnb**, and **GPT 4.1
 ## Usage
 Run the project with:
 ```sh
-uv run main.py
+uv run airbnb_mcp.py
 
